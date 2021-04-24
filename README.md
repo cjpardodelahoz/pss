@@ -16,7 +16,7 @@ library(pss)
 Let's use the data from Stanko et al. (2012), an interaction network between small mammals and their ecto-parasitic fleas from Slovakia. Load it like this:
 
 ```R
-data("mf.samp") # The interaction matrix
+data("mf.samp") # The interaction matrix. Fleas are in the rows and mammals in the columns
 data("mf.phyl.rows")  # Phylogeny of the fleas
 data("mf.phyl.cols")  # Phylogeny of the mammals
 ```
