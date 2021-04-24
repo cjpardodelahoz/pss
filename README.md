@@ -13,12 +13,12 @@ library(pss)
 
 ### Calcualte KL-weighted mean pairwise distance (klMPD)
 
-Let's use the data from Stanko et al. (2012), a interaction network between small mammals and their ecto-parasitic fleas from Slovakia. Load it like this:
+Let's use the data from Stanko et al. (2012), an interaction network between small mammals and their ecto-parasitic fleas from Slovakia. Load it like this:
 
 ```R
-data("mf.samp")
-data("mf.phyl.rows")
-data("mf.phyl.cols")
+data("mf.samp") # The interaction matrix
+data("mf.phyl.rows")  # Phylogeny of the fleas
+data("mf.phyl.cols")  # Phylogeny of the mammals
 ```
 
 Now let's calculate klMPD (see equation 8 in Pardo-De la Hoz et al. [2021]) for the fleas:
@@ -40,6 +40,14 @@ kl.mpd(mf.samp, cophenetic.phylo(mf.phyl.cols), mf.q)
 ````
 
 As you can tell, in this particular case, both approaches produce very similar results, which means that the interaction frequencies are a good proxy for the availability of the mammal species.
+
+### Calculate PSS
+
+Let's now calculate the PSS index for the fleas. First, we can do it without specifying the vector with the empirical availabilities:
+
+```R
+pss.r(mf.samp, mf.phyl.cols)
+```
 
 ## Citation
 Pardo-De la Hoz, CJ, Medeiros, ID, Gibert, JP, Chagnon, P, Magain, N, Miadlikowska, J, Lutzoni, F, (2021). A new approach to integrate phylogenetic structure and partner availability to study biotic specialization in ecological networks. IN REVIEW.
