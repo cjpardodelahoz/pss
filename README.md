@@ -8,6 +8,10 @@ Install in R using devtools:
 devtools::install_github("cjpardodelahoz/pss")
 ```
 
+## Usage
+
+### as
+
 ## Citation
 Pardo-De la Hoz, CJ, Medeiros, ID, Gibert, JP, Chagnon, P, Magain, N, Miadlikowska, J, Lutzoni, F, (2021). A new approach to integrate phylogenetic structure and partner availability to study biotic specialization in ecological networks. IN REVIEW.
 
