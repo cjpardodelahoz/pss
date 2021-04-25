@@ -22,7 +22,7 @@ data("mf.samp") # The interaction matrix. Fleas are in the rows and mammals in t
 data("mf.phyl.rows")  # Phylogeny of the fleas
 data("mf.phyl.cols")  # Phylogeny of the mammals
 ```
-We can get phylogentic distance matrices from the phylogenetic trees with cophenetic:
+We can get phylogenetic distance matrices from the phylogenetic trees with cophenetic:
 
 ```R
 mf.dis.rows <- cophenetic(mf.phyl.rows) # Phylogenetic distance matrix of fleas
