@@ -1,12 +1,14 @@
 # PSS
-R package to compute PSS index of phylogenetic diversity and the associated metrics.
+R package to compute PSS (Phylogenetic Structure of Specialization) index of phylogenetic diversity and the associated metrics (Pardo-De la Hoz et al., 2021).
 
 ## Installation
 Install in R using devtools:
 
 ```R
-devtools::install_github("cjpardodelahoz/pss")
-library(pss)
+install.packages("devtools") # Install devtools if you don't have it
+library(devtools) # Load devtools
+devtools::install_github("cjpardodelahoz/pss") # Install pss package
+library(pss) # Load pss package
 ```
 
 ## Usage
