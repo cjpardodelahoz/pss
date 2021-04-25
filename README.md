@@ -36,7 +36,7 @@ data("mf.q")
 Now, we can calculate klMPD again, but with the user-specified vector of relative availabilities of the mammals:
 
 ```R
-kl.mpd(mf.samp, cophenetic.phylo(mf.phyl.cols), mf.q)
+kl.mpd(mf.samp, cophenetic(mf.phyl.cols), mf.q)
 ````
 
 As you can tell, in this particular case, both approaches produce very similar results, which means that the interaction frequencies are a good proxy for the availability of the mammal species.
