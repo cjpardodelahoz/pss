@@ -13,6 +13,16 @@ library(pss) # Load pss package
 
 ## Usage
 
+### Get help within R
+
+```R
+?kl.mpd
+?pss.r
+?pss.rc
+?ses.mpd.rc
+```
+That will display a detailed help menu with a description of each function, and the respective arguments.
+
 ### Calcualte KL-weighted mean pairwise distance (klMPD)
 
 Let's use the data from Stanko et al. (2002), an interaction network between small mammals and their ecto-parasitic fleas from Slovakia. Load it like this:
