@@ -36,8 +36,8 @@ data("mf.phyl.cols")  # Phylogeny of the mammals
 We can get phylogenetic distance matrices from the phylogenetic trees with ape:
 
 ```R
-install.packages("ape")
-library(ape)
+install.packages("ape") # Install ape if you don't have it
+library(ape) # load ape
 mf.dis.rows <- cophenetic.phylo(mf.phyl.rows) # Phylogenetic distance matrix of fleas
 mf.dis.cols <- cophenetic.phylo(mf.phyl.cols) # Phylogenetic distance matrix of the mammals
 ```
