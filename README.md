@@ -33,11 +33,13 @@ data("mf.samp") # The interaction matrix. Fleas are in the rows and mammals in t
 data("mf.phyl.rows")  # Phylogeny of the fleas
 data("mf.phyl.cols")  # Phylogeny of the mammals
 ```
-We can get phylogenetic distance matrices from the phylogenetic trees with cophenetic:
+We can get phylogenetic distance matrices from the phylogenetic trees with ape:
 
 ```R
-mf.dis.rows <- cophenetic(mf.phyl.rows) # Phylogenetic distance matrix of fleas
-mf.dis.cols <- cophenetic(mf.phyl.cols) # Phylogenetic distance matrix of the mammals
+install.packages("ape")
+library(ape)
+mf.dis.rows <- cophenetic.phylo(mf.phyl.rows) # Phylogenetic distance matrix of fleas
+mf.dis.cols <- cophenetic.phylo(mf.phyl.cols) # Phylogenetic distance matrix of the mammals
 ```
 
 Now, let's calculate klMPD (see equation 8 in Pardo-De la Hoz et al. [2021]) for the fleas (rows) using the interaction matrix, and the distance matrix of the mammals (columns):
