@@ -24,7 +24,13 @@ data("mf.phyl.cols")  # Phylogeny of the mammals
 Now let's calculate klMPD (see equation 8 in Pardo-De la Hoz et al. [2021]) for the fleas:
 
 ```R
-kl.mpd(mf.samp, cophenetic.phylo(mf.phyl.cols))
+kl.mpd(mf.samp, cophenetic(mf.phyl.cols))
+#> Amalaraeus     Amphipsylla   Ceratophyllus Ctenocephalides  Ctenophthalmus 
+      0.1422367      17.0621259      78.7565140      40.5100602      47.8661571 
+    Dasypsyllus    Doratopsylla Hystrichopsylla     Leptopsylla     Megabothris 
+      1.0258447      32.8802667      14.1511247      63.3680184      47.7557453 
+    Nosopsyllus    Palaeopsylla Peromyscopsylla   Rhadinopsylla 
+     14.2447009      24.6862258       0.7701843       2.5260813
 ```
 
 Notice that we didn't specify a value for the "q" argument. Therefore, the availability of the species was estimated from the interaction frequencies. Stanko et al. (2012) also quantified the availability of the mammal species directly in the field. Let's load those data:
