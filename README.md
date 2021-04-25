@@ -15,7 +15,7 @@ library(pss) # Load pss package
 
 ### Calcualte KL-weighted mean pairwise distance (klMPD)
 
-Let's use the data from Stanko et al. (2012), an interaction network between small mammals and their ecto-parasitic fleas from Slovakia. Load it like this:
+Let's use the data from Stanko et al. (2002), an interaction network between small mammals and their ecto-parasitic fleas from Slovakia. Load it like this:
 
 ```R
 data("mf.samp") # The interaction matrix. Fleas are in the rows and mammals in the columns
