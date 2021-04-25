@@ -29,7 +29,7 @@ mf.dis.rows <- cophenetic(mf.phyl.rows) # Phylogenetic distance matrix of fleas
 mf.dis.cols <- cophenetic(mf.phyl.cols) # Phylogenetic distance matrix of the mammals
 ```
 
-Now, let's calculate klMPD (see equation 8 in Pardo-De la Hoz et al. [2021]) for the fleas (rows) using the interaction matrix and the distance matrix of the mammals (columns):
+Now, let's calculate klMPD (see equation 8 in Pardo-De la Hoz et al. [2021]) for the fleas (rows) using the interaction matrix, and the distance matrix of the mammals (columns):
 
 ```R
 kl.mpd(mf.samp, mf.dis.cols)
