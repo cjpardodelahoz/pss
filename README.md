@@ -20,22 +20,20 @@ data("mf.samp") # The interaction matrix. Fleas are in the rows and mammals in t
 data("mf.phyl.rows")  # Phylogeny of the fleas
 data("mf.phyl.cols")  # Phylogeny of the mammals
 ```
-
-Now let's calculate klMPD (see equation 8 in Pardo-De la Hoz et al. [2021]) for the fleas:
+We can get phylogentic distance matrices from the phylogenetic trees with cophenetic:
 
 ```R
-kl.mpd(mf.samp, cophenetic(mf.phyl.cols))
-```
-```R
-Amalaraeus     Amphipsylla   Ceratophyllus Ctenocephalides  Ctenophthalmus 
-      0.1422367      17.0621259      78.7565140      40.5100602      47.8661571 
-    Dasypsyllus    Doratopsylla Hystrichopsylla     Leptopsylla     Megabothris 
-      1.0258447      32.8802667      14.1511247      63.3680184      47.7557453 
-    Nosopsyllus    Palaeopsylla Peromyscopsylla   Rhadinopsylla 
-     14.2447009      24.6862258       0.7701843       2.5260813
+mf.dis.rows <- cophenetic(mf.phyl.rows) # Phylogenetic distance matrix of fleas
+mf.dis.cols <- cophenetic(mf.phyl.cols) # Phylogenetic distance matrix of the mammals
 ```
 
-Notice that we didn't specify a value for the "q" argument. Therefore, the availability of the species was estimated from the interaction frequencies. Stanko et al. (2012) also quantified the availability of the mammal species directly in the field. Let's load those data:
+Now, let's calculate klMPD (see equation 8 in Pardo-De la Hoz et al. [2021]) for the fleas (rows) using the interaction matrix and the distance matrix of the mammals (columns):
+
+```R
+kl.mpd(mf.samp, mf.dis.cols)
+```
+
+Notice that we didn't specify a value for the "q" argument. Therefore, the availability of the species was estimated from the interaction frequencies. Stanko et al. (2002) also quantified the availability of the mammal species directly in the field. Let's load those data:
 
 ```R
 data("mf.q")
@@ -44,17 +42,36 @@ data("mf.q")
 Now, we can calculate klMPD again, but with the user-specified vector of relative availabilities of the mammals:
 
 ```R
-kl.mpd(mf.samp, cophenetic(mf.phyl.cols), mf.q)
+kl.mpd(mf.samp, mf.dis.cols, mf.q)
 ````
 
 As you can tell, in this particular case, both approaches produce very similar results, which means that the interaction frequencies are a good proxy for the availability of the mammal species.
 
 ### Calculate PSS
 
-Let's now calculate the PSS index for the fleas. First, we can do it without specifying the vector with the empirical availabilities:
+Let's now calculate the PSS index for the fleas. This time, we can specify the phylogeny of the mammals directly. First, we can do it without specifying the vector with the empirical availabilities:
 
 ```R
 pss.r(mf.samp, mf.phyl.cols)
+```
+
+And now, we calculate PSS using the empirical estimates of availability:
+
+```R
+pss.r(mf.samp, mf.phyl.cols, mf.q)
+```
+In both cases, the most important values are under the "pss" column of the resulting dataframe. values close to zero indicate a random phylogenetic structure, negative values indicate clustering, and positive values indicate overdispersion. See Pardo-De la Hoz et al. (2021) for more details on how to interpret this index.
+
+If, as in this case, you have an interaction matrix and phylogenetic trees that include all taxa in the rows and the columns, you can get the PSS index for all taxa in a single line using pss.rc:
+
+```R
+pss.rc(mf.samp, mf.phyl.rows, mf.phyl.cols)
+```
+
+You can also specify a vector of relative availabilities in that function:
+
+```R
+pss.rc(mf.samp, mf.phyl.rows, mf.phyl.cols, q.cols = mf.q)
 ```
 
 ## Citation
