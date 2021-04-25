@@ -15,13 +15,14 @@ library(pss) # Load pss package
 
 ### Get help within R
 
+You can get a detailed help menu with a description of each function, and the respective arguments:
+
 ```R
 ?kl.mpd
 ?pss.r
 ?pss.rc
 ?ses.mpd.rc
 ```
-That will display a detailed help menu with a description of each function, and the respective arguments.
 
 ### Calcualte KL-weighted mean pairwise distance (klMPD)
 
