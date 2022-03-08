@@ -90,7 +90,7 @@ pss.rc(mf.samp, mf.phyl.rows, mf.phyl.cols, q.cols = mf.q)
 ```
 
 ## Citation
-Pardo-De la Hoz, CJ, Medeiros, ID, Gibert, JP, Chagnon, P, Magain, N, Miadlikowska, J, Lutzoni, F, (2021). A new approach to integrate phylogenetic structure and partner availability to study biotic specialization in ecological networks. IN REVIEW.
+Pardo-De la Hoz, C.J., Medeiros, I.D., Gibert, J.P., Chagnon, P.L., Magain, N., Miadlikowska, J., and Lutzoni, F. (2021). Phylogenetic structure of specialization: A new approach that integrates partner availability and phylogenetic diversity to quantify biotic specialization in ecological networks. Ecology and Evolution, 12, e8649.
 
 ## Contact
 cjpardodelahoz@gmail.com\
