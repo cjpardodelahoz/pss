@@ -1,5 +1,5 @@
 # PSS
-R package to compute PSS index of phylogenetic diversity and the associated metrics (Pardo-De la Hoz et al., 2021).
+R package to compute PSS index of phylogenetic diversity and the associated metrics (Pardo-De la Hoz et al., 2022).
 
 ## Installation
 Install in R using devtools:
